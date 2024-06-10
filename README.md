@@ -330,7 +330,7 @@ boxplot_premier <- function() {
 boxplot_premier() 
 ```
 
-<img src="man/figures/unnamed-chunk-18-1.png" width="100%" />
+<img src="README_files/figure-gfm/unnamed-chunk-18-1.png" width="100%" />
 
 We now focus on the most recent Premier League season included in our
 study and replicate Figure 3 of Varin and Firth (2024):
@@ -351,7 +351,7 @@ skills_2223  %>%
     theme(legend.position = "bottom", legend.text = element_text(size = 13))
 ```
 
-<img src="man/figures/unnamed-chunk-19-1.png" width="100%" />
+<img src="README_files/figure-gfm/unnamed-chunk-19-1.png" width="100%" />
 
 We conclude with Figure 4 from Varin and Firth (2024). Drawing this
 figure is more complicated than replicating previous figures due to the
@@ -445,7 +445,7 @@ label <- c("ARS", "MNC", "LEI", signs(labels_ls, accuracy = .01))
 p + geom_text(data = ann_text, label = label)
 ```
 
-<img src="man/figures/unnamed-chunk-20-1.png" width="100%" />
+<img src="README_files/figure-gfm/unnamed-chunk-20-1.png" width="100%" />
 
 ## References
 

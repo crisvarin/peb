@@ -9,9 +9,7 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-",
   out.width = "100%",
-  fig.path = "man/figures/",
   dpi = 300
 )
 ```
@@ -22,7 +20,6 @@ This document illustrates how to use the R (R Core Team, 2024) code accompanying
 
 <!-- badges: start -->
 <!-- badges: end -->
-
 
 Load some libraries that will be used in this document:
 ```{r, message = FALSE, warning = FALSE}
@@ -50,7 +47,7 @@ The main argument of `peb` is `tournament`. The code assumes that `tournament` i
 Please refer to Varin and Firth (2024) for further details on the meaning of the quantities indicated above.
 
 Load English Premier League results for the seasons 1995-1996 to 2022-2023:
-```{r, cache = TRUE}
+```{r}
 load("premier_1995-2023.RData")
 ```
 
@@ -106,9 +103,8 @@ The corresponding vector of estimated strength parameters is
 sort(fit2$mu, decreasing = TRUE)
 ```
 
-
 Now we load the function that is used to calculate the comparison methods which are maximum likelihood and bias-reduced maximum likelihood. Estimates with these methods are calculated with the `bpolr.R` function of Kosmidis (2014). This function can be downloaded from Ioannis Kosmidis' web page:
-```{r, cache = TRUE}
+```{r}
 library("archive")
 url_address <- "https://www.ikosmidis.com/files/rssb12025-sup-0002-supplementary-materials-ikosmidis.zip"
 archive_extract(url_address, dir = "tmp")
@@ -116,7 +112,7 @@ source("tmp/supplementary/bpolr.R")
 ```
 
 The next lines replicate the forecasting exercises of Varin and Firth (2024). For each season, paired comparison models are trained with the first $k$ matchweeks (with $k=10, 15, 20, 25, 30$) and then validated by predicting the rest of the tournament:
-```{r, chache = TRUE, message = FALSE, warning = FALSE}
+```{r, message = FALSE, warning = FALSE}
 train_weeks <- seq(10, 30, by = 5)
 n_weeks <- length(train_weeks)
 methods <- c("PEB", "MLE", "BRMLE")
