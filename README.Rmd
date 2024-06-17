@@ -103,7 +103,7 @@ The corresponding vector of estimated strength parameters is
 sort(fit2$mu, decreasing = TRUE)
 ```
 
-Now we load the function that is used to calculate the comparison methods which are maximum likelihood and bias-reduced maximum likelihood. Estimates with these methods are calculated with the `bpolr.R` function of Kosmidis (2014). This function can be downloaded from Ioannis Kosmidis' web page:
+Now we load the function that is used to calculate the comparison methods which are maximum likelihood and bias-reduced maximum likelihood. Estimates with these methods are calculated with the `bpolr.R` function of Kosmidis (2014). This function can be downloaded from Ioannis Kosmidis' [web page](https://www.ikosmidis.com/):
 ```{r}
 library("archive")
 url_address <- "https://www.ikosmidis.com/files/rssb12025-sup-0002-supplementary-materials-ikosmidis.zip"
@@ -285,9 +285,9 @@ p + geom_text(data = ann_text, label = label)
 
 ## References
  
-Kosmidis I. (2014). Improved estimation in cumulative link models. *Journal of the Royal Statistical Society Series B: Statistical Methodology* **76**(1), 169--196.
+Kosmidis I. (2014). [Improved estimation in cumulative link models](https://academic.oup.com/jrsssb/article/76/1/169/7075945). *Journal of the Royal Statistical Society Series B: Statistical Methodology* **76**(1), 169--196.
 
 R Core Team (2024). *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
 
 
-Varin C. and Firth D. (2024). Ridge Regression for Paired Comparisons: A Tractable New Approach, with Application to Premier League Football. *Submitted*.
+Varin C. and Firth D. (2024). Ridge Regression for Paired Comparisons: A Tractable New Approach, with Application to Premier League Football. <https://arxiv.org/abs/2406.09597>
