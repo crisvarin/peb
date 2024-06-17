@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 # Ridge Regression for Paired Comparisons
 
-This document illustrates how to use the R (R Core Team, 2024) code accompanying Varin and Firth (2024) to replicate the analysis of the last 28 seasons of English Premier League. The figures in the paper differ in minor respects from those produced in this document due to some manual editing for inclusion in the paper.
+This document illustrates how to use the R (R Core Team, 2024) code accompanying [Varin and Firth (2024)](https://arxiv.org/abs/2406.09597) to replicate the analysis of the last 28 seasons of English Premier League. The figures in the paper differ in minor respects from those produced in this document due to some manual editing for inclusion in the paper.
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -29,7 +29,7 @@ library("ggplot2")
 library("signs")
 ```
 
-Load the code that implements the methodology discussed in Varin and Firth (2024):
+Load the code that implements the methodology discussed in [Varin and Firth (2024)](https://arxiv.org/abs/2406.09597):
 ```{r, warning = FALSE, message = FALSE}
 source("peb.R")
 ```
@@ -44,7 +44,7 @@ The main argument of `peb` is `tournament`. The code assumes that `tournament` i
 - the logical variable `home_effect` that indicates whether a home-field effect parameter has to be included (`TRUE`) or not (`FALSE`);
 - the small-sample adjustment parameter `a`. The default value for `a` is `2 * levels(tournament$data)` which corresponds in adding one imaginary concordant pair and one imaginary discordant pair to the counts for each of the teams, as discussed in the paper. Estimation without the small-sample adjustment is obtained with `a=0`.
 
-Please refer to Varin and Firth (2024) for further details on the meaning of the quantities indicated above.
+Please refer to [Varin and Firth (2024)](https://arxiv.org/abs/2406.09597) for further details on the meaning of the quantities indicated above.
 
 Load English Premier League results for the seasons 1995-1996 to 2022-2023:
 ```{r}
@@ -111,7 +111,7 @@ archive_extract(url_address, dir = "tmp")
 source("tmp/supplementary/bpolr.R")
 ```
 
-The next lines replicate the forecasting exercises of Varin and Firth (2024). For each season, paired comparison models are trained with the first $k$ matchweeks (with $k=10, 15, 20, 25, 30$) and then validated by predicting the rest of the tournament:
+The next lines replicate the forecasting exercises of [Varin and Firth (2024)](https://arxiv.org/abs/2406.09597). For each season, paired comparison models are trained with the first $k$ matchweeks (with $k=10, 15, 20, 25, 30$) and then validated by predicting the rest of the tournament:
 ```{r, message = FALSE, warning = FALSE}
 train_weeks <- seq(10, 30, by = 5)
 n_weeks <- length(train_weeks)
@@ -142,7 +142,7 @@ for (s in seasons) {
 }
 ```
 
-The results of the forecasting exercises are summarized in Figure 2 of Varin and Firth (2024) which reports the boxplot summary of the distributions of the logarithmic skill scores calculated after 10, 15, 20, 25 and 30 weeks of matches:
+The results of the forecasting exercises are summarized in Figure 2 of [Varin and Firth (2024)](https://arxiv.org/abs/2406.09597) which reports the boxplot summary of the distributions of the logarithmic skill scores calculated after 10, 15, 20, 25 and 30 weeks of matches:
 ```{r}
 ## select a set of colors that are safe for colorblind people:
 my_colors <- c("#E69F00", "#D55E00", "#0072B2")
@@ -177,7 +177,7 @@ boxplot_premier <- function() {
 boxplot_premier() 
 ```
 
-We now focus on the most recent Premier League season included in our study and replicate Figure 3 of Varin and Firth (2024):
+We now focus on the most recent Premier League season included in our study and replicate Figure 3 of [Varin and Firth (2024)](https://arxiv.org/abs/2406.09597):
 ```{r, warning = FALSE}
 skills_2223 <- premier_skill_scores %>%
   filter(season == "2022-2023")
@@ -194,7 +194,7 @@ skills_2223  %>%
     theme(legend.position = "bottom", legend.text = element_text(size = 13))
 ```
 
-We conclude with Figure 4 from Varin and Firth (2024). Drawing this figure is more complicated than replicating previous figures due to the various annotations included:
+We conclude with Figure 4 from [Varin and Firth (2024)](https://arxiv.org/abs/2406.09597). Drawing this figure is more complicated than replicating previous figures due to the various annotations included:
 ```{r}
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## First step: extract the data

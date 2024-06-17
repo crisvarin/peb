@@ -4,10 +4,11 @@
 # Ridge Regression for Paired Comparisons
 
 This document illustrates how to use the R (R Core Team, 2024) code
-accompanying Varin and Firth (2024) to replicate the analysis of the
-last 28 seasons of English Premier League. The figures in the paper
-differ in minor respects from those produced in this document due to
-some manual editing for inclusion in the paper.
+accompanying [Varin and Firth (2024)](https://arxiv.org/abs/2406.09597)
+to replicate the analysis of the last 28 seasons of English Premier
+League. The figures in the paper differ in minor respects from those
+produced in this document due to some manual editing for inclusion in
+the paper.
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -21,8 +22,8 @@ library("ggplot2")
 library("signs")
 ```
 
-Load the code that implements the methodology discussed in Varin and
-Firth (2024):
+Load the code that implements the methodology discussed in [Varin and
+Firth (2024)](https://arxiv.org/abs/2406.09597):
 
 ``` r
 source("peb.R")
@@ -54,7 +55,8 @@ home team. Further arguments of `peb` are:
   counts for each of the teams, as discussed in the paper. Estimation
   without the small-sample adjustment is obtained with `a=0`.
 
-Please refer to Varin and Firth (2024) for further details on the
+Please refer to [Varin and Firth
+(2024)](https://arxiv.org/abs/2406.09597) for further details on the
 meaning of the quantities indicated above.
 
 Load English Premier League results for the seasons 1995-1996 to
@@ -219,7 +221,7 @@ Now we load the function that is used to calculate the comparison
 methods which are maximum likelihood and bias-reduced maximum
 likelihood. Estimates with these methods are calculated with the
 `bpolr.R` function of Kosmidis (2014). This function can be downloaded
-from Ioannis Kosmidis’ web page:
+from Ioannis Kosmidis’ [web page](https://www.ikosmidis.com/):
 
 ``` r
 library("archive")
@@ -228,10 +230,11 @@ archive_extract(url_address, dir = "tmp")
 source("tmp/supplementary/bpolr.R")
 ```
 
-The next lines replicate the forecasting exercises of Varin and Firth
-(2024). For each season, paired comparison models are trained with the
-first $k$ matchweeks (with $k=10, 15, 20, 25, 30$) and then validated by
-predicting the rest of the tournament:
+The next lines replicate the forecasting exercises of [Varin and Firth
+(2024)](https://arxiv.org/abs/2406.09597). For each season, paired
+comparison models are trained with the first $k$ matchweeks (with
+$k=10, 15, 20, 25, 30$) and then validated by predicting the rest of the
+tournament:
 
 ``` r
 train_weeks <- seq(10, 30, by = 5)
@@ -292,9 +295,9 @@ for (s in seasons) {
 ```
 
 The results of the forecasting exercises are summarized in Figure 2 of
-Varin and Firth (2024) which reports the boxplot summary of the
-distributions of the logarithmic skill scores calculated after 10, 15,
-20, 25 and 30 weeks of matches:
+[Varin and Firth (2024)](https://arxiv.org/abs/2406.09597) which reports
+the boxplot summary of the distributions of the logarithmic skill scores
+calculated after 10, 15, 20, 25 and 30 weeks of matches:
 
 ``` r
 ## select a set of colors that are safe for colorblind people:
@@ -333,7 +336,8 @@ boxplot_premier()
 <img src="README_files/figure-gfm/unnamed-chunk-18-1.png" width="100%" />
 
 We now focus on the most recent Premier League season included in our
-study and replicate Figure 3 of Varin and Firth (2024):
+study and replicate Figure 3 of [Varin and Firth
+(2024)](https://arxiv.org/abs/2406.09597):
 
 ``` r
 skills_2223 <- premier_skill_scores %>%
@@ -353,9 +357,10 @@ skills_2223  %>%
 
 <img src="README_files/figure-gfm/unnamed-chunk-19-1.png" width="100%" />
 
-We conclude with Figure 4 from Varin and Firth (2024). Drawing this
-figure is more complicated than replicating previous figures due to the
-various annotations included:
+We conclude with Figure 4 from [Varin and Firth
+(2024)](https://arxiv.org/abs/2406.09597). Drawing this figure is more
+complicated than replicating previous figures due to the various
+annotations included:
 
 ``` r
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -449,7 +454,8 @@ p + geom_text(data = ann_text, label = label)
 
 ## References
 
-Kosmidis I. (2014). Improved estimation in cumulative link models.
+Kosmidis I. (2014). [Improved estimation in cumulative link
+models](https://academic.oup.com/jrsssb/article/76/1/169/7075945).
 *Journal of the Royal Statistical Society Series B: Statistical
 Methodology* **76**(1), 169–196.
 
@@ -459,4 +465,4 @@ Computing*. R Foundation for Statistical Computing, Vienna, Austria.
 
 Varin C. and Firth D. (2024). Ridge Regression for Paired Comparisons: A
 Tractable New Approach, with Application to Premier League Football.
-*Submitted*.
+<https://arxiv.org/abs/2406.09597>
