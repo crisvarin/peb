@@ -346,6 +346,5 @@ R Core Team (2024). *R: A Language and Environment for Statistical
 Computing*. R Foundation for Statistical Computing, Vienna, Austria.
 <https://www.R-project.org/>.
 
-Varin C. and Firth D. (2024). Ridge Regression for Paired Comparisons: A
-Tractable New Approach, with Application to Premier League Football.
-<https://arxiv.org/abs/2406.09597>
+Varin C. and Firth D. (2024). Tractable Ridge Regression for Paired
+Comparisons. <https://arxiv.org/abs/2406.09597>
