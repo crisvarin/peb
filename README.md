@@ -247,7 +247,6 @@ premier_skill_scores <- data.frame(season = rep(seasons, each = n_methods * n_we
 premier_skill_scores$method <- factor(premier_skill_scores$method, levels = c("MLE", "BRMLE", "PEB"))
 
 for (s in seasons) {
-  print(s)
   for (w in train_weeks) {
     this_season <- premier_data %>% filter(season == s)
     this_season <- droplevels(this_season)
@@ -264,34 +263,6 @@ for (s in seasons) {
         compute_skillscore(br_fit, test_set, "logit", ref_probs))
   }
 }
-#> [1] "1995-1996"
-#> [1] "1996-1997"
-#> [1] "1997-1998"
-#> [1] "1998-1999"
-#> [1] "1999-2000"
-#> [1] "2000-2001"
-#> [1] "2001-2002"
-#> [1] "2002-2003"
-#> [1] "2003-2004"
-#> [1] "2004-2005"
-#> [1] "2005-2006"
-#> [1] "2006-2007"
-#> [1] "2007-2008"
-#> [1] "2008-2009"
-#> [1] "2009-2010"
-#> [1] "2010-2011"
-#> [1] "2011-2012"
-#> [1] "2012-2013"
-#> [1] "2013-2014"
-#> [1] "2014-2015"
-#> [1] "2015-2016"
-#> [1] "2016-2017"
-#> [1] "2017-2018"
-#> [1] "2018-2019"
-#> [1] "2019-2020"
-#> [1] "2020-2021"
-#> [1] "2021-2022"
-#> [1] "2022-2023"
 ```
 
 The results of the forecasting exercises are summarized in Figure 2 of

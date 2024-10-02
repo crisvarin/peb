@@ -123,7 +123,6 @@ premier_skill_scores <- data.frame(season = rep(seasons, each = n_methods * n_we
 premier_skill_scores$method <- factor(premier_skill_scores$method, levels = c("MLE", "BRMLE", "PEB"))
 
 for (s in seasons) {
-  print(s)
   for (w in train_weeks) {
     this_season <- premier_data %>% filter(season == s)
     this_season <- droplevels(this_season)
