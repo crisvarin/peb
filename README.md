@@ -51,9 +51,9 @@ home team. Further arguments of `peb` are:
   effect parameter has to be included (`TRUE`) or not (`FALSE`);
 - the small-sample adjustment parameter `a`. The default value for `a`
   is `2 * levels(tournament$data)` which corresponds in adding one
-  imaginary concordant pair and one imaginary discordant pair to the
-  counts for each of the teams, as discussed in the paper. Estimation
-  without the small-sample adjustment is obtained with `a=0`.
+  imaginary concordant couple and one imaginary discordant couple of
+  paired comparisons to each of the teams, as discussed in the paper.
+  Estimation without the small-sample adjustment is obtained with `a=0`.
 
 Please refer to [Varin and Firth
 (2024)](https://arxiv.org/abs/2406.09597) for further details on the

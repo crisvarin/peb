@@ -42,7 +42,7 @@ The main argument of `peb` is `tournament`. The code assumes that `tournament` i
 
 - the ridge tuning parameter `lambda`. The default value is `NULL` in which case $\lambda$ is estimated by the pairwise empirical Bayes method;
 - the logical variable `home_effect` that indicates whether a home-field effect parameter has to be included (`TRUE`) or not (`FALSE`);
-- the small-sample adjustment parameter `a`. The default value for `a` is `2 * levels(tournament$data)` which corresponds in adding one imaginary concordant pair and one imaginary discordant pair to the counts for each of the teams, as discussed in the paper. Estimation without the small-sample adjustment is obtained with `a=0`.
+- the small-sample adjustment parameter `a`. The default value for `a` is `2 * levels(tournament$data)` which corresponds in adding one imaginary concordant couple and one imaginary discordant couple of paired comparisons to each of the teams, as discussed in the paper. Estimation without the small-sample adjustment is obtained with `a=0`.
 
 Please refer to [Varin and Firth (2024)](https://arxiv.org/abs/2406.09597) for further details on the meaning of the quantities indicated above.
 
